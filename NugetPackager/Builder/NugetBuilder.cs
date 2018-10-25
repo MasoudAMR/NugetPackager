@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Linq;
 
 namespace NugetPackager.Builder
@@ -19,7 +20,32 @@ namespace NugetPackager.Builder
         {
             var nuspec = _nuspecBuilder.Build();
             var fileName = nuspec.Split('\\').LastOrDefault();
-            Process.Start(MainInfo.NugetAppPath, $@"pack {MainInfo.NuspecOutputPath}\{fileName} -version {_assemblyVersion} -OutputDirectory {_destPath}").WaitForExit();
+
+            ProcessStartInfo startInfo = new ProcessStartInfo
+            {
+                FileName = MainInfo.NugetAppPath,
+                Arguments = $@"pack {MainInfo.NuspecOutputPath}\{fileName} -version {_assemblyVersion} -OutputDirectory {_destPath}",
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+
+            Process processTemp = new Process
+            {
+                StartInfo = startInfo,
+                EnableRaisingEvents = true
+            };
+            try
+            {
+                processTemp.Start();
+            }
+            catch (Exception exception)
+            {
+                throw exception;
+            }
+
+            
         }
     }
 }

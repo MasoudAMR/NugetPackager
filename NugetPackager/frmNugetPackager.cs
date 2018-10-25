@@ -30,12 +30,25 @@ namespace NugetPackager
                 var assembly = Assembly.LoadFrom(file);
                 var version = assembly.GetName().Version;
 
-                var nuspecBuilder = new NuspecBuilder(file, version.ToString());
+                try
+                {
+                    var nuspecBuilder = new NuspecBuilder(file, version.ToString());
 
-                var nugetBuilder = new NugetBuilder(nuspecBuilder, nugetPath, $"{version}");
-                nugetBuilder.Build();
+                    var nugetBuilder = new NugetBuilder(nuspecBuilder, nugetPath, $"{version}");
+                    nugetBuilder.Build();
 
-                sb.AppendLine($@"create package '{fileName}' successfuly");
+                    sb.AppendLine($@"create package '{fileName}' successfuly");
+                }
+                catch (Exception ex)
+                {
+                    string getMessage(Exception exception)
+                    {
+                        if (exception == null)
+                            return "";
+                        return $@"{exception.Message} -> {getMessage(exception.InnerException)}";
+                    }
+                    sb.AppendLine($"create package '{fileName}' failed -> {getMessage(ex)}");
+                }
 
                 txtLog.Text = sb.ToString();
                 txtLog.Refresh();
