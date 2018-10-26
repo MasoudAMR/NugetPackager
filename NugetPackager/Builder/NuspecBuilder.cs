@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
 using System.Xml;
 
@@ -98,7 +97,7 @@ namespace NugetPackager.Builder
         {
             var fileTag = _document.CreateElement("file");
             fileTag.SetAttribute("src", _dllPath);
-            fileTag.SetAttribute("target", $@"lib\monoandroid81\{_fileNameWithOutExtention}");
+            fileTag.SetAttribute("target", $@"{MainInfo.TargetPath}\{_fileNameWithOutExtention}");
 
             var filesTag = _document.CreateElement("files");
             filesTag.AppendChild(fileTag);

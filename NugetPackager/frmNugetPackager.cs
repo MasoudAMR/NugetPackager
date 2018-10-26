@@ -1,12 +1,10 @@
 ﻿using NugetPackager.Builder;
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
-using System.Xml;
 
 namespace NugetPackager
 {
@@ -53,6 +51,9 @@ namespace NugetPackager
                 txtLog.Text = sb.ToString();
                 txtLog.Refresh();
             }
+
+            sb.AppendLine("Finish...");
+            txtLog.Text = sb.ToString();
         }
 
     }
