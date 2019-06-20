@@ -9,6 +9,6 @@ namespace NugetPackager
         public static string NuspecOutputPath => $@"{AppDomain.CurrentDomain.BaseDirectory}\Output";
         public static string Author => $@"Masoud Hosseini";
         public static string CopyRight => $@"Copyright ©  2018";
-        public static object TargetPath => $@"lib\monoandroid81";
+        public static object TargetPath => $@"lib";
     }
 }

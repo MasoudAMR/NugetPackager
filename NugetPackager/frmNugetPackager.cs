@@ -21,10 +21,10 @@ namespace NugetPackager
 
             var dllPath = fldDllPath.Path;
             var nugetPath = fldNugetPath.Path;
-            var files = Directory.GetFiles(dllPath, "*.dll");
-            foreach (var file in files)
+           
+            foreach (var fileName in clbDll.CheckedItems)
             {
-                var fileName = file.Split('\\').LastOrDefault();
+                var file = $@"{dllPath}\{fileName}";
                 var assembly = Assembly.LoadFrom(file);
                 var version = assembly.GetName().Version;
 
@@ -54,6 +54,14 @@ namespace NugetPackager
 
             sb.AppendLine("Finish...");
             txtLog.Text = sb.ToString();
+        }
+
+        public void FldDllPath_OnSelectFolder(object sender)
+        {
+            clbDll.Items.Clear();
+            if (!Directory.Exists(fldDllPath.Path)) return;
+            var files = Directory.GetFiles(fldDllPath.Path, "*.dll");
+            clbDll.Items.AddRange(files.Select(x => x.Split('\\').LastOrDefault()).ToArray());
         }
 
     }

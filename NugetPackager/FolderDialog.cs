@@ -24,5 +24,11 @@ namespace NugetPackager
                 }
             }
         }
+        private void TxtPath_TextChanged(object sender, System.EventArgs e)
+        {
+            OnSelectFolder?.Invoke(sender);
+        }
+        public delegate void OnSelectFolderHandler(object sender);
+        public event OnSelectFolderHandler OnSelectFolder;
     }
 }

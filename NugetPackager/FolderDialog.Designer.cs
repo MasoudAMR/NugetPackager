@@ -35,24 +35,27 @@
             // 
             // lblDesc
             // 
-            this.lblDesc.Location = new System.Drawing.Point(6, 6);
+            this.lblDesc.Location = new System.Drawing.Point(5, 5);
             this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(105, 23);
+            this.lblDesc.Size = new System.Drawing.Size(93, 18);
             this.lblDesc.TabIndex = 4;
             this.lblDesc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtPath
             // 
-            this.txtPath.Location = new System.Drawing.Point(117, 3);
+            this.txtPath.Location = new System.Drawing.Point(104, 2);
+            this.txtPath.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPath.Name = "txtPath";
-            this.txtPath.Size = new System.Drawing.Size(548, 26);
+            this.txtPath.Size = new System.Drawing.Size(488, 22);
             this.txtPath.TabIndex = 3;
+            this.txtPath.TextChanged += new System.EventHandler(TxtPath_TextChanged);
             // 
             // btnDialog
             // 
-            this.btnDialog.Location = new System.Drawing.Point(672, 1);
+            this.btnDialog.Location = new System.Drawing.Point(597, 1);
+            this.btnDialog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDialog.Name = "btnDialog";
-            this.btnDialog.Size = new System.Drawing.Size(36, 29);
+            this.btnDialog.Size = new System.Drawing.Size(32, 23);
             this.btnDialog.TabIndex = 5;
             this.btnDialog.Text = "...";
             this.btnDialog.UseVisualStyleBackColor = true;
@@ -60,13 +63,14 @@
             // 
             // FolderDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnDialog);
             this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.txtPath);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FolderDialog";
-            this.Size = new System.Drawing.Size(730, 33);
+            this.Size = new System.Drawing.Size(649, 26);
             this.ResumeLayout(false);
             this.PerformLayout();
 
