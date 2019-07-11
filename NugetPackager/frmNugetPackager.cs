@@ -21,11 +21,15 @@ namespace NugetPackager
 
             var dllPath = fldDllPath.Path;
             var nugetPath = fldNugetPath.Path;
-           
+
             foreach (var fileName in clbDll.CheckedItems)
             {
                 var file = $@"{dllPath}\{fileName}";
-                var assembly = Assembly.LoadFrom(file);
+
+                byte[] b = File.ReadAllBytes(file);
+                byte[] fb = new byte[b.Length];
+                b.CopyTo(fb, 0);
+                var assembly = Assembly.Load(fb);
                 var version = assembly.GetName().Version;
 
                 try
@@ -47,7 +51,7 @@ namespace NugetPackager
                     }
                     sb.AppendLine($"create package '{fileName}' failed -> {getMessage(ex)}");
                 }
-
+                
                 txtLog.Text = sb.ToString();
                 txtLog.Refresh();
             }

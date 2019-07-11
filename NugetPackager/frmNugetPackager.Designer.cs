@@ -41,10 +41,10 @@ namespace NugetPackager
             // 
             // btnRun
             // 
-            this.btnRun.Location = new System.Drawing.Point(693, 42);
-            this.btnRun.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRun.Location = new System.Drawing.Point(1386, 81);
+            this.btnRun.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(125, 32);
+            this.btnRun.Size = new System.Drawing.Size(250, 62);
             this.btnRun.TabIndex = 0;
             this.btnRun.Text = "Run";
             this.btnRun.UseVisualStyleBackColor = true;
@@ -53,67 +53,70 @@ namespace NugetPackager
             // txtLog
             // 
             this.txtLog.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
-            this.txtLog.Location = new System.Drawing.Point(332, 139);
-            this.txtLog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtLog.Location = new System.Drawing.Point(664, 269);
+            this.txtLog.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.txtLog.Multiline = true;
             this.txtLog.Name = "txtLog";
             this.txtLog.ReadOnly = true;
             this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtLog.Size = new System.Drawing.Size(490, 325);
+            this.txtLog.Size = new System.Drawing.Size(976, 626);
             this.txtLog.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(329, 108);
+            this.label3.Location = new System.Drawing.Point(658, 209);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 17);
+            this.label3.Size = new System.Drawing.Size(144, 32);
             this.label3.TabIndex = 6;
             this.label3.Text = "Messages";
             // 
             // fldDllPath
             // 
             this.fldDllPath.Label = "Dll Path";
-            this.fldDllPath.Location = new System.Drawing.Point(23, 31);
-            this.fldDllPath.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.fldDllPath.Location = new System.Drawing.Point(46, 60);
+            this.fldDllPath.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.fldDllPath.Name = "fldDllPath";
             this.fldDllPath.Path = "";
-            this.fldDllPath.OnSelectFolder += FldDllPath_OnSelectFolder;
-            this.fldDllPath.Size = new System.Drawing.Size(668, 26);
+            this.fldDllPath.Size = new System.Drawing.Size(1336, 50);
             this.fldDllPath.TabIndex = 7;
             // 
             // fldNugetPath
             // 
             this.fldNugetPath.Label = "Nuget Path";
-            this.fldNugetPath.Location = new System.Drawing.Point(23, 62);
-            this.fldNugetPath.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.fldNugetPath.Location = new System.Drawing.Point(46, 120);
+            this.fldNugetPath.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.fldNugetPath.Name = "fldNugetPath";
             this.fldNugetPath.Path = "";
-            this.fldNugetPath.Size = new System.Drawing.Size(668, 26);
+            this.fldNugetPath.Size = new System.Drawing.Size(1336, 50);
             this.fldNugetPath.TabIndex = 8;
             // 
             // clbDll
             // 
+            this.clbDll.CheckOnClick = true;
             this.clbDll.FormattingEnabled = true;
-            this.clbDll.Location = new System.Drawing.Point(23, 139);
+            this.clbDll.Location = new System.Drawing.Point(46, 269);
+            this.clbDll.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.clbDll.Name = "clbDll";
-            this.clbDll.Size = new System.Drawing.Size(303, 327);
+            this.clbDll.Size = new System.Drawing.Size(602, 599);
             this.clbDll.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 108);
+            this.label1.Location = new System.Drawing.Point(40, 209);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 17);
+            this.label1.Size = new System.Drawing.Size(67, 32);
             this.label1.TabIndex = 10;
             this.label1.Text = "DLL";
             // 
             // FrmNugetPackager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 473);
+            this.ClientSize = new System.Drawing.Size(1690, 916);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.clbDll);
             this.Controls.Add(this.fldNugetPath);
@@ -121,7 +124,7 @@ namespace NugetPackager
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtLog);
             this.Controls.Add(this.btnRun);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.Name = "FrmNugetPackager";
             this.Text = "NugetPackager";
             this.ResumeLayout(false);
